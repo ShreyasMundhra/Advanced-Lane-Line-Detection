@@ -114,4 +114,6 @@ Here's a [link to my video result](./project_video_out.mp4)
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+My pipeline will most likely fail when I have lane lines running out of the image. My pipeline is also not so robust. Even if I encounter a single bad frame in a video when my detection is inaccurate, it will lead to all subsequent detections being inaccurate since the detection of the previous frame is used for detecting the lines in the current frame.
+
+In order to overcome this, one improvement can be to use a metric to measure the confidence level of our detection being accurate. The previous detection should only be used as a basis for the current detection if it was a high confidence detection, else the histogram and sliding window method should be used. Another improvement is to use the detections of multiple past frames as a basis for the current detection, so that a single bad frame cannot singlehandedly make all subsequent detections inaccurate.
