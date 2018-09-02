@@ -104,6 +104,8 @@ At the end of the section, "Showing radius of curvature and offset on lane detec
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
+For the video, I applied the histogram and the sliding window method to the first frame of the video. For all subsequent frames, I fit a quadratic polynomial to all non-zero pixels within a margin of 50 pixels of the lane lines detected in the previous frame in the video.
+
 Here's a [link to my video result](./project_video_out.mp4)
 
 ---
