@@ -19,7 +19,7 @@ The goals / steps of this project are the following:
 [image2]: ./undistort_output.png "Undistorted"
 [image3]: ./binary.jpg "Binary Example"
 [image4]: ./warped_straight_lines.png "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
+[image5]: ./color_fit_lines.png "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
 [video1]: ./project_video.mp4 "Video"
 
@@ -76,7 +76,15 @@ I verified that my perspective transform was working as expected by drawing the 
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
+I implemented this step in the section "Sliding window to find the lane lines" in the iPython notebook line_detection.ipynb. 
+
+In order to find the lane line pixels, I first plotted a histogram of where binary activations occur across the bottom half of the image. Once this was done, the highest peaks of the histogram in the left half of the image and the right half of the image were considered to be the position of the base of the left and right lanes respectively.
+
+The next step was to consider 9 sliding windows moving upwards in the image to find the lane line pixels. A margin of 50 pixels was defined for each sliding window and the first sliding window at the bottom of the image was centered at the base of the lane found using the histogram in the previous step.
+
+The non-zero pixels occurring within a sliding window were considered to be part of the lane lines. Whenever the number of non-zero pixels within a sliding window exceeded 50, the next sliding window is recentered based on the mean position of these pixels.
+
+Once all these lane-line pixels were found, a quadratic polynomial x = Ay<sup>2</sup> + By + C was fit to both the left and right lane-line pixels using `np.polyfit` function.
 
 ![alt text][image5]
 
