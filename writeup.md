@@ -18,7 +18,7 @@ The goals / steps of this project are the following:
 [image1]: ./undistort_calib_output.png "Undistorted"
 [image2]: ./undistort_output.png "Undistorted"
 [image3]: ./binary.jpg "Binary Example"
-[image4]: ./examples/warped_straight_lines.jpg "Warp Example"
+[image4]: ./warped_straight_lines.png "Warp Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
 [video1]: ./project_video.mp4 "Video"
