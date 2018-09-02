@@ -20,8 +20,8 @@ The goals / steps of this project are the following:
 [image3]: ./binary.jpg "Binary Example"
 [image4]: ./warped_straight_lines.png "Warp Example"
 [image5]: ./color_fit_lines.png "Fit Visual"
-[image6]: ./examples/example_output.jpg "Output"
-[video1]: ./project_video.mp4 "Video"
+[image6]: ./output.jpg "Output"
+[video1]: ./project_video_out.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
 
@@ -90,11 +90,11 @@ Once all these lane-line pixels were found, a quadratic polynomial x = Ay<sup>2<
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in lines # through # in my code in `my_other_file.py`
+I did this in the sections "Finding Radius of Curvature", "Finding offset" and "Showing radius of curvature and offset on lane detected image" in the iPython notebook line_detection.ipynb.
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+At the end of the section, "Showing radius of curvature and offset on lane detected image", I saved an example output image in the file `output.jpg` which is shown below:
 
 ![alt text][image6]
 
@@ -104,7 +104,7 @@ I implemented this step in lines # through # in my code in `yet_another_file.py`
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](./project_video_out.mp4)
 
 ---
 
